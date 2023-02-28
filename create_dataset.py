@@ -1,49 +1,54 @@
 import csv
+import random
+import numpy as np
+
 from utils import *
 
 start_date = date(year=2022, month=1, day=1)
-stop_date = date(year=2022, month=12, day=31)
+stop_date = date(year=2022, month=2, day=27)
+
+#lista date
 date_ls = return_list(start_date, stop_date)
-print(date_ls)
 
 #tempo espresso in minuti
 #acqua espressa in litri
 task_durata_acqua = {
-    "mani": {"acqua": list(range(0.2, 1)),
-            "tempo": list(range(0.5, 1))
+    "mani": {"acqua": np.linspace(0.2, 1, 9).tolist(),
+            "tempo": np.linspace(0.5, 1, 10).tolist()
     },
-    "bagno": {"acqua": list(range(100, 160)),
-            "tempo": list(range(30, 60))
+    "bagno": {"acqua": np.linspace(100, 160, 10).tolist(),
+            "tempo": np.linspace(30, 60, 5).tolist()
     },
-    "doccia": {"acqua": list(range(20, 40)),
-            "tempo": list(range(4, 11))
+    "doccia": {"acqua": np.linspace(20, 40, 10).tolist(),
+            "tempo": np.linspace(4, 11, 8).tolist()
     },
-    "denti": {"acqua": list(range(0.3, 1.2)),
-            "tempo": list(range(2,4))
+    "denti": {"acqua": np.linspace(0.3, 1.2, 10).tolist(),
+            "tempo": np.linspace(2, 4, 5).tolist()
     },
-    "piatti": {"acqua": list(range(15, 25)),
-            "tempo": list(range(20,40))
+    "piatti": {"acqua": np.linspace(15, 25, 10).tolist(),
+            "tempo": np.linspace(20, 40, 5).tolist()
     },
-    "auto": {"acqua": list(range(120, 170)),
-            "tempo": list(range(20,40))
+    "auto": {"acqua": np.linspace(120, 170, 10).tolist(),
+            "tempo": np.linspace(20, 40, 5).tolist()
     }
 }
 
+# Apertura del file CSV in modalità scrittura
+with open('consumo_acqua.csv', mode='w', newline='') as csv_file:
+    # Definizione delle colonne del CSV
+    fieldnames = ['Data', 'Durata', 'Consumo', "Compito"]
+    writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
 
+    # Scrittura dell'intestazione del CSV
+    writer.writeheader()
 
+    # Popolazione del CSV con dati casuali
+    for dt in date_ls:
+        for task, values in task_durata_acqua.items():
+            durata = random.choice(values['tempo'])
+            acqua = random.choice(values['acqua'])
+            writer.writerow({'Data': dt,
+                             'Durata': durata,
+                             'Consumo': acqua,
+                             'Compito': task})
 
-'''
-# Definiamo il nome del file CSV e il numero di colonne
-file_name = "consumo_acqua.csv"
-num_cols = 4
-
-# Definiamo i dati da scrivere nel file CSV
-tasks = []
-num_tasks = 300
-task = {}
-
-
-for i in range(num_tasks):
-    task['Data'] = 
-    tasks.append(task)
-'''
