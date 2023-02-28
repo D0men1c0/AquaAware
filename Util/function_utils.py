@@ -1,4 +1,4 @@
-from datetime import timedelta, date
+from datetime import datetime, date, timedelta
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 
@@ -24,6 +24,21 @@ def init_ml():
     # Caricamento del dataset
     data = pd.read_csv("dataset/consumo_acqua.csv")
 
+    # Modifica data
+    data['Data'] = pd.to_datetime(data['Data'])
+    data.insert(1, column = "Anno", value = 0)
+    data.insert(1, column = "Mese", value = 0)
+    data.insert(1, column = "Giorno", value = 0)
+
+    for idx, row in data.iterrows():
+        time_str = row['Data'].strftime('%Y-%m-%d')
+        time = datetime.strptime(time_str, '%Y-%m-%d')
+
+        data.loc[idx, 'Anno'] = time.year
+        data.loc[idx, 'Mese'] = time.month
+        data.loc[idx, 'Giorno'] = time.day
+    data.drop(['Data'], axis=1, inplace=True)
+
     # Scaler
     X = data[['Durata', 'Consumo']]
     scaler = MinMaxScaler()
@@ -42,3 +57,4 @@ def init_ml():
     # Salvataggio del dataset aggiornato
     data.to_csv('dataset/acqua_one_hot.csv', index=False)
 
+init_ml()
