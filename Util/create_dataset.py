@@ -1,8 +1,7 @@
 import csv
 import random
 import numpy as np
-
-from utils import *
+from function_utils import *
 
 start_date = date(year=2022, month=1, day=1)
 stop_date = date(year=2022, month=12, day=31)
@@ -34,7 +33,7 @@ task_durata_acqua = {
 }
 
 # Apertura del file CSV in modalità scrittura
-with open('consumo_acqua.csv', mode='w', newline='') as csv_file:
+with open('dataset/consumo_acqua.csv', mode='w', newline='') as csv_file:
     # Definizione delle colonne del CSV
     fieldnames = ['Data', 'Durata', 'Consumo', "Compito"]
     writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
