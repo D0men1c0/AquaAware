@@ -5,7 +5,7 @@ import numpy as np
 from utils import *
 
 start_date = date(year=2022, month=1, day=1)
-stop_date = date(year=2022, month=2, day=27)
+stop_date = date(year=2022, month=12, day=31)
 
 #lista date
 date_ls = return_list(start_date, stop_date)
