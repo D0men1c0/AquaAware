@@ -13,23 +13,23 @@ date_ls = return_list(start_date, stop_date)
 #tempo espresso in minuti
 #acqua espressa in litri
 task_durata_acqua = {
-    "mani": {"acqua": np.linspace(0.2, 1, 9).tolist(),
-            "tempo": np.linspace(0.5, 1, 10).tolist()
+    "mani": {"acqua": [round(x, 2) for x in np.linspace(0.2, 1, 9).tolist()],
+            "tempo": [round(x, 2) for x in np.linspace(0.5, 1, 10).tolist()]
     },
-    "bagno": {"acqua": np.linspace(100, 160, 10).tolist(),
-            "tempo": np.linspace(30, 60, 5).tolist()
+    "bagno": {"acqua": [round(x, 2) for x in np.linspace(100, 160, 10).tolist()],
+            "tempo": [round(x, 2) for x in np.linspace(30, 60, 5).tolist()]
     },
-    "doccia": {"acqua": np.linspace(20, 40, 10).tolist(),
-            "tempo": np.linspace(4, 11, 8).tolist()
+    "doccia": {"acqua": [round(x, 2) for x in np.linspace(20, 40, 10).tolist()],
+            "tempo": [round(x, 2) for x in np.linspace(4, 11, 8).tolist()]
     },
-    "denti": {"acqua": np.linspace(0.3, 1.2, 10).tolist(),
-            "tempo": np.linspace(2, 4, 5).tolist()
+    "denti": {"acqua": [round(x, 2) for x in np.linspace(0.3, 1.2, 10).tolist()],
+            "tempo": [round(x, 2) for x in np.linspace(2, 4, 5).tolist()]
     },
-    "piatti": {"acqua": np.linspace(15, 25, 10).tolist(),
-            "tempo": np.linspace(20, 40, 5).tolist()
+    "piatti": {"acqua": [round(x, 2) for x in np.linspace(15, 25, 10).tolist()],
+            "tempo": [round(x, 2) for x in np.linspace(20, 40, 5).tolist()]
     },
-    "auto": {"acqua": np.linspace(120, 170, 10).tolist(),
-            "tempo": np.linspace(20, 40, 5).tolist()
+    "auto": {"acqua": [round(x, 2) for x in np.linspace(120, 170, 10).tolist()],
+            "tempo": [round(x, 2) for x in np.linspace(20, 40, 5).tolist()]
     }
 }
 
