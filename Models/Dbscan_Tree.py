@@ -11,7 +11,7 @@ X = data[['Durata', 'Consumo']]
 
 
 # Creazione di un'istanza di DBSCAN e addestramento del modello
-dbscan = DBSCAN(eps = 7, min_samples = 10)
+dbscan = DBSCAN(eps = 6, min_samples = 8)
 dbscan.fit(X)
 
 # Ottenimento delle etichette di cluster

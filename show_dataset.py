@@ -4,16 +4,16 @@ import numpy as np
 from matplotlib.colors import ListedColormap
 
 # leggi il dataset dal file CSV
-data = pd.read_csv("dataset/consumo_acqua.csv")
+data = pd.read_csv("dataset/acqua_etichette.csv")
 
-data = data.sample(n=50, random_state=42)
+
 
 # estrai le colonne delle coordinate x e y
 x = data['Durata']
 y = data['Consumo']
 
 # crea un array unidimensionale con valori univoci per ciascuna classe
-classes, _ = pd.factorize(data[['Compito']].values.ravel())
+classes, _ = pd.factorize(data[['etichette']].values.ravel())
 
 # crea un grafico a dispersione
 
@@ -39,10 +39,6 @@ plt.title('Relazione durata e consumo per ogni task')
 plt.xlabel('Durata (minuti)')
 plt.ylabel('Consumo (litri)')
 
-handles = []
-labels = np.unique(classes)
-for label in labels:
-    handles.append(plt.scatter([], [], c=cmap(label), label=label))
-plt.legend(handles=handles, labels=[class_names[label] for label in labels], loc='lower right')
+
 # mostra il grafico
 plt.show()
