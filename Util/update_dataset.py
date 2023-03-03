@@ -12,23 +12,23 @@ date_ls = return_list(start_date, stop_date)
 #tempo espresso in minuti
 #acqua espressa in litri
 task_durata_acqua = {
-    "mani": {"acqua": [round(x, 2) for x in np.linspace(0.1, 0.8, 9).tolist()],
-            "tempo": [round(x, 2) for x in np.linspace(0.3, 0.8, 10).tolist()]
+    "mani": {"acqua": [round(x, 2) for x in np.linspace(0.18, 0.72, 9).tolist()],
+            "tempo": [round(x, 2) for x in np.linspace(0.45, 0.9, 10).tolist()]
     },
-    "bagno": {"acqua": [round(x, 2) for x in np.linspace(80, 140, 10).tolist()],
-            "tempo": [round(x, 2) for x in np.linspace(20, 50, 5).tolist()]
+    "bagno": {"acqua": [round(x, 2) for x in np.linspace(85, 136, 10).tolist()],
+            "tempo": [round(x, 2) for x in np.linspace(28.5, 57, 5).tolist()]
     },
-    "doccia": {"acqua": [round(x, 2) for x in np.linspace(15, 35, 10).tolist()],
-            "tempo": [round(x, 2) for x in np.linspace(3, 10, 8).tolist()]
+    "doccia": {"acqua": [round(x, 2) for x in np.linspace(18, 36, 10).tolist()],
+            "tempo": [round(x, 2) for x in np.linspace(3.6, 9.9, 8).tolist()]
     },
-    "denti": {"acqua": [round(x, 2) for x in np.linspace(0.2, 1, 10).tolist()],
-            "tempo": [round(x, 2) for x in np.linspace(1, 3, 5).tolist()]
+    "denti": {"acqua": [round(x, 2) for x in np.linspace(0.24, 0.96, 10).tolist()],
+            "tempo": [round(x, 2) for x in np.linspace(2, 3.2, 5).tolist()]
     },
-    "piatti": {"acqua": [round(x, 2) for x in np.linspace(12, 22, 10).tolist()],
-            "tempo": [round(x, 2) for x in np.linspace(18, 38, 5).tolist()]
+    "piatti": {"acqua": [round(x, 2) for x in np.linspace(12, 20, 10).tolist()],
+            "tempo": [round(x, 2) for x in np.linspace(19, 38, 5).tolist()]
     },
-    "auto": {"acqua": [round(x, 2) for x in np.linspace(110, 160, 10).tolist()],
-            "tempo": [round(x, 2) for x in np.linspace(18, 38, 5).tolist()]
+    "auto": {"acqua": [round(x, 2) for x in np.linspace(102, 145, 10).tolist()],
+            "tempo": [round(x, 2) for x in np.linspace(18, 36, 5).tolist()]
     }
 }
 
