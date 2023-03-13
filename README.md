@@ -35,3 +35,9 @@ Di seguito un grafico che mostra gli esempi presenti nel dataset `acqua_etichett
 Dunque una volta che abbiamo assegnato la classe a ciascun esempio presente nel datase possiamo utilizzare nuovamente un algoritmo di apprendimento supervisionato come il **Decision Tree** per poter effettuare nuovamente le predizioni come visto nella prima fase.
 
 
+# Scelte progettuali
+Come algoritmo di apprendimento supervisionato si è scelto di utilizzare il Decision Tree in quanto oltre a fornire predizioni accurate, come mostrato nel file `DecisionTree.py`, i tempi di risposta sono molto ridotti rispetto ad altri algoritmi come il KNN ad esempio.
+
+Invece come algoritmo di apprendimento non supervisionato si è scelto di utilizzare il K-Means in quanto le classi sono già note a priori e pertanto l'algoritmo non deve capire quali sono i cluster da effettuare ma sono già forniti a priori.
+
+
